@@ -11,7 +11,7 @@ URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	glib2-devel >= 1:2.4.4
-Buildrequires:	libsigc++-devel >= 1:2.0.3
+BuildRequires:	libsigc++-devel >= 1:2.0.3
 BuildRequires:	libtool >= 2:1.4d
 Obsoletes:	gtkmm-glib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
