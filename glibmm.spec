@@ -2,7 +2,7 @@ Summary:	A C++ interface for glib library
 Summary(pl):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
 Version:	2.3.6
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
@@ -83,7 +83,13 @@ rm -rf $RPM_BUILD_ROOT
 %doc %{_gtkdocdir}/%{name}-2.4
 %doc %{_examplesdir}/%{name}-%{version}
 %{_libdir}/lib*.la
-%{_libdir}/%{name}-2.3
+%dir %{_libdir}/%{name}-2.3
+%dir %{_libdir}/%{name}-2.3/proc
+%{_libdir}/%{name}-2.3/proc/m4
+%{_libdir}/%{name}-2.3/proc/pm
+%attr(755,root,root) %{_libdir}/%{name}-2.3/proc/*.pl
+%attr(755,root,root) %{_libdir}/%{name}-2.3/proc/gmmproc
+%{_libdir}/%{name}-2.3/include
 %{_includedir}/%{name}-2.3
 %{_pkgconfigdir}/*.pc
 %{_aclocaldir}/glibmm_check_perl.m4
