@@ -23,7 +23,7 @@ Interfejs C++ dla biblioteki glib.
 Summary:	Header files for glibmm library
 Summary(pl):	Pliki nag³ówkowe biblioteki glibmm
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 2.3.2
 Requires:	libsigc++-devel >= 1.9.14
 Requires:	libstdc++-devel
@@ -39,7 +39,7 @@ Pliki nag³ówkowe biblioteki glibmm.
 Summary:	Static glibmm library
 Summary(pl):	Statyczna biblioteka glibmm
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	gtkmm-glib-static
 
 %description static
