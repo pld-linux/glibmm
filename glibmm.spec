@@ -8,6 +8,7 @@ Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
 # Source0-md5:	4fa0b7e26b65a2a8551060883a575a57
 URL:		http://gtkmm.sourceforge.net/
+BuildRequires:	automake
 BuildRequires:	glib2-devel >= 1:2.4.0
 Buildrequires:	libsigc++-devel >= 1:2.0.0
 Obsoletes:	gtkmm-glib
@@ -39,7 +40,6 @@ Pliki nag³ówkowe biblioteki glibmm.
 Summary:	Reference documentation and examples for glibmm
 Summary(pl):	Szczegó³owa dokumentacja i przyk³ady dla glibmm
 Group:		Documentation
-Requires:	devhelp
 
 %description doc
 Reference documentation and examples for glibmm.
@@ -64,6 +64,7 @@ Statyczna biblioteka glibmm.
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.* scripts
 %configure \
 	--enable-fulldocs \
 	--enable-static
