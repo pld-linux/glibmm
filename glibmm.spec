@@ -12,7 +12,10 @@ BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	glib2-devel >= 1:2.6.2
 Buildrequires:	libsigc++-devel >= 1:2.0.10
+BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d
+BuildRequires:	perl-XML-Parser
+BuildRequires:	pkgconfig
 Obsoletes:	gtkmm-glib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -73,7 +76,6 @@ Statyczna biblioteka glibmm.
 %configure \
 	--enable-fulldocs \
 	--enable-static
-
 %{__make}
 
 %install
