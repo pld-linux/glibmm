@@ -1,14 +1,14 @@
 Summary:	A C++ interface for glib library
 Summary(pl):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
-Version:	2.3.2
+Version:	2.3.3
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	171340b30ebbe725a489c319fa6df1da
+# Source0-md5:	a8fa1dde53d71266b46b1ccdd77b2bb6
 URL:		http://gtkmm.sourceforge.net/
-BuildRequires:	glib2-devel >= 2.3.0
+BuildRequires:	glib2-devel >= 2.3.2
 Buildrequires:	libsigc++-devel >= 1.2.0
 Obsoletes:	gtkmm-glib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -24,7 +24,7 @@ Summary:	Header files for glibmm library
 Summary(pl):	Pliki nag³ówkowe biblioteki glibmm
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	glib2-devel >= 2.3.0
+Requires:	glib2-devel >= 2.3.2
 Requires:	libsigc++-devel >= 1.2.0
 Requires:	libstdc++-devel
 Obsoletes:	gtkmm-glib-devel
@@ -83,9 +83,16 @@ rm -rf $RPM_BUILD_ROOT
 %doc %{_gtkdocdir}/%{name}-2.4
 %doc %{_examplesdir}/%{name}-%{version}
 %{_libdir}/lib*.la
-%{_libdir}/%{name}-2.3
+%dir %{_libdir}/%{name}-2.3
+%{_libdir}/%{name}-2.3/include
+%dir %{_libdir}/%{name}-2.3/proc
+%{_libdir}/%{name}-2.3/proc/m4
+%{_libdir}/%{name}-2.3/proc/pm
+%attr(755,root,root) %{_libdir}/%{name}-2.3/proc/gmmproc
+%attr(755,root,root) %{_libdir}/%{name}-2.3/proc/*.pl
 %{_includedir}/%{name}-2.3
 %{_pkgconfigdir}/*.pc
+%{_aclocaldir}/*.m4
 
 %files static
 %defattr(644,root,root,755)
