@@ -35,6 +35,18 @@ Header files for glibmm library.
 %description devel -l pl
 Pliki nag³ówkowe biblioteki glibmm.
 
+%package doc
+Summary:	Reference documentation and examples for glibmm
+Summary(pl):	Szczegó³owa dokumentacja i przyk³ady dla glibmm
+Group:		Documentation
+Requires:	devhelp
+
+%description doc
+Reference documentation and examples for glibmm.
+
+%description doc -l pl
+Szczegó³owa dokumentacja i przyk³ady dla glibmm.
+
 %package static
 Summary:	Static glibmm library
 Summary(pl):	Statyczna biblioteka glibmm
@@ -80,8 +92,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
-%doc %{_gtkdocdir}/%{name}-2.4
-%doc %{_examplesdir}/%{name}-%{version}
 %{_libdir}/lib*.la
 %dir %{_libdir}/%{name}-2.4
 %{_libdir}/%{name}-2.4/include
@@ -93,6 +103,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/%{name}-2.4
 %{_pkgconfigdir}/*.pc
 %{_aclocaldir}/*.m4
+
+%files doc
+%defattr(644,root,root,755)
+%{_gtkdocdir}/%{name}-2.4
+%{_examplesdir}/%{name}-%{version}
 
 %files static
 %defattr(644,root,root,755)
