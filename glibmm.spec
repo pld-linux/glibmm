@@ -2,15 +2,17 @@ Summary:	A C++ interface for glib library
 Summary(pl):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
 Version:	2.4.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
 # Source0-md5:	4fa0b7e26b65a2a8551060883a575a57
 URL:		http://gtkmm.sourceforge.net/
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	glib2-devel >= 1:2.4.0
 Buildrequires:	libsigc++-devel >= 1:2.0.0
+BuildRequires:	libtool >= 2:1.4d
 Obsoletes:	gtkmm-glib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -64,7 +66,10 @@ Statyczna biblioteka glibmm.
 %setup -q
 
 %build
-cp -f /usr/share/automake/config.* scripts
+%{__libtoolize}
+%{__aclocal} -I scripts
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-fulldocs \
 	--enable-static
