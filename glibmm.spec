@@ -11,7 +11,7 @@ URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	glib2-devel >= 1:2.6.3
-Buildrequires:	libsigc++-devel >= 1:2.0.10
+BuildRequires:	libsigc++-devel >= 1:2.0.10
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d
 BuildRequires:	perl-XML-Parser
