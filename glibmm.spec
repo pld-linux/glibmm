@@ -27,6 +27,7 @@ Requires:	%{name} = %{version}
 Requires:	glib2-devel >= 2.3.0
 Requires:	libsigc++-devel >= 1.2.0
 Requires:	libstdc++-devel
+Obsoletes:	gtkmm-glib-devel
 
 %description devel
 Header files for glibmm library.
@@ -39,6 +40,7 @@ Summary:	Static glibmm library
 Summary(pl):	Statyczna biblioteka glibmm
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
+Obsoletes:	gtkmm-glib-static
 
 %description static
 Static glibmm library.
