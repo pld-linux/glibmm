@@ -1,17 +1,17 @@
 Summary:	A C++ interface for glib library
 Summary(pl):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
-Version:	2.4.0
-Release:	2
+Version:	2.4.1
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	4fa0b7e26b65a2a8551060883a575a57
+# Source0-md5:	7174e12c277e9ff34af72dde3d05ea5d
 URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	glib2-devel >= 1:2.4.0
-Buildrequires:	libsigc++-devel >= 1:2.0.0
+Buildrequires:	libsigc++-devel >= 1:2.0.1
 BuildRequires:	libtool >= 2:1.4d
 Obsoletes:	gtkmm-glib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -28,7 +28,7 @@ Summary(pl):	Pliki nag³ówkowe biblioteki glibmm
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.4.0
-Requires:	libsigc++-devel >= 1:2.0.0
+Requires:	libsigc++-devel >= 1:2.0.1
 Requires:	libstdc++-devel
 Obsoletes:	gtkmm-glib-devel
 
