@@ -1,12 +1,12 @@
 Summary:	A C++ interface for glib library
 Summary(pl):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
-Version:	2.3.3
+Version:	2.3.4
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	a8fa1dde53d71266b46b1ccdd77b2bb6
+# Source0-md5:	960056730994eb3d45d870f483c0936f
 URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	glib2-devel >= 2.3.2
 Buildrequires:	libsigc++-devel >= 1.2.0
