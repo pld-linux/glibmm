@@ -9,7 +9,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.4/%{name}-%{version}.t
 # Source0-md5:	4fa0b7e26b65a2a8551060883a575a57
 URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	glib2-devel >= 1:2.4.0
-Buildrequires:	libsigc++-devel >= 1.9.16
+Buildrequires:	libsigc++-devel >= 1:2.0.0
 Obsoletes:	gtkmm-glib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -25,7 +25,7 @@ Summary(pl):	Pliki nag³ówkowe biblioteki glibmm
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.4.0
-Requires:	libsigc++-devel >= 1.9.16
+Requires:	libsigc++-devel >= 1:2.0.0
 Requires:	libstdc++-devel
 Obsoletes:	gtkmm-glib-devel
 
