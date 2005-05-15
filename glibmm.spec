@@ -2,7 +2,7 @@ Summary:	A C++ interface for glib library
 Summary(pl):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
 Version:	2.6.1
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.6/%{name}-%{version}.tar.bz2
