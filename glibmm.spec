@@ -1,4 +1,4 @@
-%bcond_without	static	# don't build static library
+%bcond_without	static_libs	# don't build static library
 Summary:	A C++ interface for glib library
 Summary(pl):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
@@ -77,7 +77,7 @@ Statyczna biblioteka glibmm.
 %configure \
 	--enable-fulldocs \
 	--enable-static \
-	%{!?with_static:--disable-static}
+	%{!?with_static_libs:--disable-static}
 %{__make}
 
 %install
@@ -119,7 +119,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_gtkdocdir}/%{name}-2.4
 %{_examplesdir}/%{name}-%{version}
 
-%if %{with static}
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
