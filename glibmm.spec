@@ -4,21 +4,23 @@
 Summary:	A C++ interface for glib library
 Summary(pl):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
-Version:	2.8.3
+Version:	2.10.1
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	6a915615fb1158a2d761d5777dcd16dc
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.10/%{name}-%{version}.tar.bz2
+# Source0-md5:	3af9f4f3dbec200545f1eb21a678706d
 URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	glib2-devel >= 1:2.6.3
+BuildRequires:	glib2-devel >= 1:2.8.0
 BuildRequires:	libsigc++-devel >= 1:2.0.10
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d
 BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
+Requires:	glib2 >= 1:2.8.0
+Requires:	libsigc++ >= 1:2.0.10
 Obsoletes:	gtkmm-glib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,7 +35,7 @@ Summary:	Header files for glibmm library
 Summary(pl):	Pliki nag³ówkowe biblioteki glibmm
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	glib2-devel >= 1:2.6.3
+Requires:	glib2-devel >= 1:2.8.0
 Requires:	libsigc++-devel >= 1:2.0.10
 Requires:	libstdc++-devel
 Obsoletes:	gtkmm-glib-devel
@@ -43,17 +45,6 @@ Header files for glibmm library.
 
 %description devel -l pl
 Pliki nag³ówkowe biblioteki glibmm.
-
-%package doc
-Summary:	Reference documentation and examples for glibmm
-Summary(pl):	Szczegó³owa dokumentacja i przyk³ady dla glibmm
-Group:		Documentation
-
-%description doc
-Reference documentation and examples for glibmm.
-
-%description doc -l pl
-Szczegó³owa dokumentacja i przyk³ady dla glibmm.
 
 %package static
 Summary:	Static glibmm library
@@ -68,6 +59,17 @@ Static glibmm library.
 %description static -l pl
 Statyczna biblioteka glibmm.
 
+%package doc
+Summary:	Reference documentation and examples for glibmm
+Summary(pl):	Szczegó³owa dokumentacja i przyk³ady dla glibmm
+Group:		Documentation
+
+%description doc
+Reference documentation and examples for glibmm.
+
+%description doc -l pl
+Szczegó³owa dokumentacja i przyk³ady dla glibmm.
+
 %prep
 %setup -q
 
@@ -78,8 +80,8 @@ Statyczna biblioteka glibmm.
 %{__automake}
 %configure \
 	--enable-fulldocs \
-	--enable-static \
-	%{!?with_static_libs:--disable-static}
+	%{?with_static_libs:--enable-static}
+
 %{__make}
 
 %install
@@ -116,13 +118,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/*.pc
 %{_aclocaldir}/*.m4
 
-%files doc
-%defattr(644,root,root,755)
-%{_gtkdocdir}/%{name}-2.4
-%{_examplesdir}/%{name}-%{version}
-
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
 %endif
+
+%files doc
+%defattr(644,root,root,755)
+%{_gtkdocdir}/%{name}-2.4
+%{_examplesdir}/%{name}-%{version}
