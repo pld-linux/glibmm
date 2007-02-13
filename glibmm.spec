@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	A C++ interface for glib library
-Summary(pl.UTF-8):   Interfejs C++ dla biblioteki glib
+Summary(pl.UTF-8):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
 Version:	2.12.5
 Release:	1
@@ -33,7 +33,7 @@ Interfejs C++ dla biblioteki glib.
 
 %package devel
 Summary:	Header files for glibmm library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki glibmm
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki glibmm
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.12.9
@@ -49,7 +49,7 @@ Pliki nagłówkowe biblioteki glibmm.
 
 %package static
 Summary:	Static glibmm library
-Summary(pl.UTF-8):   Statyczna biblioteka glibmm
+Summary(pl.UTF-8):	Statyczna biblioteka glibmm
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	gtkmm-glib-static
@@ -62,7 +62,7 @@ Statyczna biblioteka glibmm.
 
 %package doc
 Summary:	Reference documentation and examples for glibmm
-Summary(pl.UTF-8):   Szczegółowa dokumentacja i przykłady dla glibmm
+Summary(pl.UTF-8):	Szczegółowa dokumentacja i przykłady dla glibmm
 Group:		Documentation
 
 %description doc
