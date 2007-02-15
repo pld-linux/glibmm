@@ -5,12 +5,12 @@
 Summary:	A C++ interface for glib library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
-Version:	2.12.5
+Version:	2.12.6
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.12/%{name}-%{version}.tar.bz2
-# Source0-md5:	309fab274ada3d62aa4506fb6f5685e2
+# Source0-md5:	e078ea7f710233e47e18e4cafbb61be5
 URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -102,27 +102,32 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog CHANGES NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libglibmm-2.4.so.*.*.*
+%attr(755,root,root) %{_libdir}/libglibmm_generate_extra_defs-2.4.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libglibmm-2.4.so
+%attr(755,root,root) %{_libdir}/libglibmm_generate_extra_defs-2.4.so
+%{_libdir}/libglibmm-2.4.la
+%{_libdir}/libglibmm_generate_extra_defs-2.4.la
 %dir %{_libdir}/%{name}-2.4
 %{_libdir}/%{name}-2.4/include
 %dir %{_libdir}/%{name}-2.4/proc
 %{_libdir}/%{name}-2.4/proc/m4
 %{_libdir}/%{name}-2.4/proc/pm
+%attr(755,root,root) %{_libdir}/%{name}-2.4/proc/beautify_docs.pl
+%attr(755,root,root) %{_libdir}/%{name}-2.4/proc/generate_wrap_init.pl
 %attr(755,root,root) %{_libdir}/%{name}-2.4/proc/gmmproc
-%attr(755,root,root) %{_libdir}/%{name}-2.4/proc/*.pl
 %{_includedir}/%{name}-2.4
-%{_pkgconfigdir}/*.pc
-%{_aclocaldir}/*.m4
+%{_pkgconfigdir}/glibmm-2.4.pc
+%{_aclocaldir}/glibmm_check_perl.m4
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libglibmm-2.4.a
+%{_libdir}/libglibmm_generate_extra_defs-2.4.a
 %endif
 
 %files doc
