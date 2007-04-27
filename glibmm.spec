@@ -6,7 +6,7 @@ Summary:	A C++ interface for glib library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
 Version:	2.12.8
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.12/%{name}-%{version}.tar.bz2
@@ -60,16 +60,30 @@ Static glibmm library.
 %description static -l pl.UTF-8
 Statyczna biblioteka glibmm.
 
-%package doc
-Summary:	Reference documentation and examples for glibmm
-Summary(pl.UTF-8):	Szczegółowa dokumentacja i przykłady dla glibmm
+%package apidocs
+Summary:	Reference documentation for glibmm
+Summary(pl.UTF-8):	Szczegółowa dokumentacja dla glibmm
 Group:		Documentation
+Requires:	gtk-doc-common
+Provides:	glibmm-doc
+Obsoletes:	glibmm-doc
 
-%description doc
-Reference documentation and examples for glibmm.
+%description apidocs
+Reference documentation for glibmm.
 
-%description doc -l pl.UTF-8
-Szczegółowa dokumentacja i przykłady dla glibmm.
+%description apidocs -l pl.UTF-8
+Szczegółowa dokumentacja dla glibmm.
+
+%package examples
+Summary:	Examples for glibmm
+Summary(pl.UTF-8):	Przykłady dla glibmm
+Group:		Development/Libraries
+
+%description examples
+Examples for glibmm.
+
+%description examples -l pl.UTF-8
+Przykłady dla glibmm.
 
 %prep
 %setup -q
@@ -130,7 +144,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libglibmm_generate_extra_defs-2.4.a
 %endif
 
-%files doc
+%files apidocs
 %defattr(644,root,root,755)
 %{_gtkdocdir}/%{name}-2.4
+
+%files examples
+%defattr(644,root,root,755)
 %{_examplesdir}/%{name}-%{version}
