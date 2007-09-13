@@ -5,22 +5,22 @@
 Summary:	A C++ interface for glib library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
-Version:	2.12.10
+Version:	2.14.0
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.12/%{name}-%{version}.tar.bz2
-# Source0-md5:	85830693d669f0d86d6e64db3b57f581
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.14/%{name}-%{version}.tar.bz2
+# Source0-md5:	e4ae55323d50bb77db0099ae93eddcd3
 URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	glib2-devel >= 1:2.12.9
+BuildRequires:	glib2-devel >= 1:2.14.0
 BuildRequires:	libsigc++-devel >= 1:2.0.17
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d
 BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
-Requires:	glib2 >= 1:2.12.9
+Requires:	glib2 >= 1:2.14.0
 Requires:	libsigc++ >= 1:2.0.17
 Obsoletes:	gtkmm-glib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,7 +36,7 @@ Summary:	Header files for glibmm library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki glibmm
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	glib2-devel >= 1:2.12.9
+Requires:	glib2-devel >= 1:2.14.0
 Requires:	libsigc++-devel >= 1:2.0.17
 Requires:	libstdc++-devel
 Obsoletes:	gtkmm-glib-devel
