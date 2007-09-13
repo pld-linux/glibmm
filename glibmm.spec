@@ -7,7 +7,7 @@ Summary(pl.UTF-8):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
 Version:	2.14.0
 Release:	1
-License:	LGPL
+License:	LGPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.14/%{name}-%{version}.tar.bz2
 # Source0-md5:	e4ae55323d50bb77db0099ae93eddcd3
