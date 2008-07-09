@@ -20,7 +20,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d
 BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
-Requires:	glib2 >= 1:2.16.0
+Requires:	glib2 >= 1:2.16.3
 Requires:	libsigc++ >= 1:2.2.0
 Obsoletes:	gtkmm-glib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
