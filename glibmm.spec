@@ -11,7 +11,7 @@ License:	LGPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.18/%{name}-%{version}.tar.bz2
 # Source0-md5:	942290a4b77dac3ea18a5b70373fe04c
-URL:		http://gtkmm.sourceforge.net/
+URL:		http://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.58
 BuildRequires:	automake >= 1:1.7
 BuildRequires:	glib2-devel >= 1:2.18.0
