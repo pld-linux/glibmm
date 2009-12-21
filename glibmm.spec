@@ -5,22 +5,23 @@
 Summary:	A C++ interface for glib library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
-Version:	2.20.0
+Version:	2.22.1
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.20/%{name}-%{version}.tar.bz2
-# Source0-md5:	38fa409b531144c238b6e2532e351799
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.22/%{name}-%{version}.tar.bz2
+# Source0-md5:	1a96c7fde75ddbb421bc23fb4aa7adba
 URL:		http://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.58
 BuildRequires:	automake >= 1:1.7
-BuildRequires:	glib2-devel >= 1:2.20.0
+BuildRequires:	glib2-devel >= 1:2.22.0
 BuildRequires:	libsigc++-devel >= 1:2.2.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d
+BuildRequires:	mm-common
 BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
-Requires:	glib2 >= 1:2.20.0
+Requires:	glib2 >= 1:2.22.0
 Requires:	libsigc++ >= 1:2.2.0
 Obsoletes:	gtkmm-glib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,7 +37,7 @@ Summary:	Header files for glibmm library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki glibmm
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	glib2-devel >= 1:2.20.0
+Requires:	glib2-devel >= 1:2.22.0
 Requires:	libsigc++-devel >= 1:2.2.0
 Requires:	libstdc++-devel
 Obsoletes:	gtkmm-glib-devel
@@ -90,22 +91,25 @@ Przykłady dla glibmm.
 
 %build
 %{__libtoolize}
-%{__aclocal} -I scripts
+%{__aclocal} -I build
 %{__autoconf}
 %{__automake}
 %configure \
-	--enable-fulldocs \
 	%{?with_static_libs:--enable-static}
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	gtkmm_docdir=%{_gtkdocdir}/%{name}-2.4 \
-	glibmm_docdir=%{_examplesdir}/%{name}-%{version}
+	libdocdir=%{_gtkdocdir}/%{name}-2.4 \
+	devhelpdir=%{_gtkdocdir}/%{name}-2.4
+
+cp -r examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+rm -f $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/Makefile*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -138,10 +142,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/glibmm-2.4/proc
 %{_libdir}/glibmm-2.4/proc/m4
 %{_libdir}/glibmm-2.4/proc/pm
-%attr(755,root,root) %{_libdir}/glibmm-2.4/proc/beautify_docs.pl
 %attr(755,root,root) %{_libdir}/glibmm-2.4/proc/generate_wrap_init.pl
 %attr(755,root,root) %{_libdir}/glibmm-2.4/proc/gmmproc
-%{_libdir}/glibmm-2.4/proc/doxygen_to_devhelp.xsl
+%{_datadir}/glibmm-2.4
 %{_includedir}/giomm-2.4
 %{_includedir}/glibmm-2.4
 %{_pkgconfigdir}/giomm-2.4.pc
