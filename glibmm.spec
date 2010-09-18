@@ -20,7 +20,6 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d
 BuildRequires:	mm-common >= 0.7
 BuildRequires:	pkgconfig
-BuildRequires:	zlib-devel
 Requires:	glib2 >= 1:2.24.0
 Requires:	libsigc++ >= 1:2.2.0
 Obsoletes:	gtkmm-glib
