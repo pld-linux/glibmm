@@ -13,14 +13,14 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.27/%{name}-%{version}.t
 # Source0-md5:	f9a70b7ca9bf7435b08b5df1b7b36fd4
 URL:		http://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake >= 1:1.9
-BuildRequires:	glib2-devel >= 1:2.24.0
+BuildRequires:	automake >= 1:1.11
+BuildRequires:	glib2-devel >= 1:2.28.0
 BuildRequires:	libsigc++-devel >= 1:2.2.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d
-BuildRequires:	mm-common >= 0.7
+BuildRequires:	mm-common >= 0.9.3
 BuildRequires:	pkgconfig
-Requires:	glib2 >= 1:2.24.0
+Requires:	glib2 >= 1:2.28.0
 Requires:	libsigc++ >= 1:2.2.0
 Obsoletes:	gtkmm-glib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,7 +36,7 @@ Summary:	Header files for glibmm library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki glibmm
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	glib2-devel >= 1:2.24.0
+Requires:	glib2-devel >= 1:2.28.0
 Requires:	libsigc++-devel >= 1:2.2.0
 Requires:	libstdc++-devel
 Obsoletes:	gtkmm-glib-devel
