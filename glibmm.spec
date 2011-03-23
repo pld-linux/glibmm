@@ -5,12 +5,12 @@
 Summary:	A C++ interface for glib library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
-Version:	2.24.2
+Version:	2.27.97
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.24/%{name}-%{version}.tar.bz2
-# Source0-md5:	48861fec006c2bd8e301d8e44cd12d3c
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.27/%{name}-%{version}.tar.bz2
+# Source0-md5:	f9a70b7ca9bf7435b08b5df1b7b36fd4
 URL:		http://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
@@ -108,7 +108,8 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 	devhelpdir=%{_gtkdocdir}/%{name}-2.4
 
 cp -r examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-rm -f $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/Makefile*
+%{__rm} $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/Makefile* \
+	$RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -131,9 +132,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libgiomm-2.4.so
 %attr(755,root,root) %{_libdir}/libglibmm-2.4.so
 %attr(755,root,root) %{_libdir}/libglibmm_generate_extra_defs-2.4.so
-%{_libdir}/libgiomm-2.4.la
-%{_libdir}/libglibmm-2.4.la
-%{_libdir}/libglibmm_generate_extra_defs-2.4.la
 %dir %{_libdir}/giomm-2.4
 %{_libdir}/giomm-2.4/include
 %dir %{_libdir}/glibmm-2.4
@@ -143,7 +141,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/glibmm-2.4/proc/pm
 %attr(755,root,root) %{_libdir}/glibmm-2.4/proc/generate_wrap_init.pl
 %attr(755,root,root) %{_libdir}/glibmm-2.4/proc/gmmproc
-%{_datadir}/glibmm-2.4
 %{_includedir}/giomm-2.4
 %{_includedir}/glibmm-2.4
 %{_pkgconfigdir}/giomm-2.4.pc
