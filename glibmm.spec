@@ -10,7 +10,7 @@ Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.28/%{name}-%{version}.tar.bz2
-# Source0-md5:	2feddcb1ce49bb7d1bce169fe961548f
+# Source0-md5:	8cda9a84e6efdd8f35d2803432783325
 URL:		http://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
