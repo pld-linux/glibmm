@@ -18,6 +18,7 @@ BuildRequires:	glib2-devel >= 1:2.28.0
 BuildRequires:	libsigc++-devel >= 1:2.2.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d
+BuildRequires:	m4
 BuildRequires:	mm-common >= 0.9.5
 BuildRequires:	pkgconfig
 Requires:	glib2 >= 1:2.28.0
