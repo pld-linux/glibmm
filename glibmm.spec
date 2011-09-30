@@ -2,27 +2,31 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
+%define 	glib_ver 1:2.30.0
+%define		libsig_ver 1:2.2.0
 Summary:	A C++ interface for glib library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
-Version:	2.28.2
+Version:	2.30.0
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.28/%{name}-%{version}.tar.bz2
-# Source0-md5:	cf33d1861d09fb2952a6a1d69e0502e3
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.30/%{name}-%{version}.tar.xz
+# Source0-md5:	54c803cf95a8d395a55397c723cdb315
 URL:		http://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	glib2-devel >= 1:2.28.0
-BuildRequires:	libsigc++-devel >= 1:2.2.0
+BuildRequires:	glib2-devel >= %{glib_ver}
+BuildRequires:	libsigc++-devel >= %{libsig_ver}
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d
 BuildRequires:	m4
 BuildRequires:	mm-common >= 0.9.5
 BuildRequires:	pkgconfig
-Requires:	glib2 >= 1:2.28.0
-Requires:	libsigc++ >= 1:2.2.0
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
+Requires:	glib2 >= %{glib_ver}
+Requires:	libsigc++ >= %{libsig_ver}
 Obsoletes:	gtkmm-glib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -37,8 +41,8 @@ Summary:	Header files for glibmm library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki glibmm
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	glib2-devel >= 1:2.28.0
-Requires:	libsigc++-devel >= 1:2.2.0
+Requires:	glib2-devel >= %{glib_ver}
+Requires:	libsigc++-devel >= %{libsig_ver}
 Requires:	libstdc++-devel
 Obsoletes:	gtkmm-glib-devel
 
@@ -146,7 +150,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/glibmm-2.4
 %{_pkgconfigdir}/giomm-2.4.pc
 %{_pkgconfigdir}/glibmm-2.4.pc
-%{_aclocaldir}/glibmm_check_perl.m4
 
 %if %{with static_libs}
 %files static
