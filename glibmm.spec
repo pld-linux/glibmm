@@ -2,17 +2,17 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
-%define 	glib_ver 1:2.31.0
+%define 	glib_ver 1:2.30.0
 %define		libsig_ver 1:2.2.0
 Summary:	A C++ interface for glib library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
-Version:	2.31.0
+Version:	2.30.0
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.31/%{name}-%{version}.tar.xz
-# Source0-md5:	39370860eb60f16fa424bf388b429aa7
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.30/%{name}-%{version}.tar.xz
+# Source0-md5:	54c803cf95a8d395a55397c723cdb315
 URL:		http://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
@@ -30,8 +30,6 @@ Requires:	libsigc++ >= %{libsig_ver}
 Obsoletes:	gtkmm-glib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-#Requested 'gobject-2.0 >= 2.31.0' but version of GObject is 2.30.2
-#Requested 'gmodule-2.0
 %description
 A C++ interface for glib library.
 
