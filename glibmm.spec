@@ -2,17 +2,17 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
-%define 	glib_ver 1:2.34.0
+%define 	glib_ver 1:2.36.1
 %define		libsig_ver 1:2.2.10
 Summary:	A C++ interface for glib library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
-Version:	2.34.1
+Version:	2.36.0
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.34/%{name}-%{version}.tar.xz
-# Source0-md5:	25dccf8e95abcde034a002b450a43125
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.36/%{name}-%{version}.tar.xz
+# Source0-md5:	6f8484ae440e6b2d027a2cf9a3bb7591
 URL:		http://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
