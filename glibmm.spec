@@ -1,14 +1,16 @@
+# TODO
+# - make clean on -examples (remove .deps) -> & noarch subpackage
 #
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
-#
+
 %define 	glib_ver 1:2.38.0
 %define		libsig_ver 1:2.2.10
 Summary:	A C++ interface for glib library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
 Version:	2.38.1
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.38/%{name}-%{version}.tar.xz
@@ -72,6 +74,9 @@ Group:		Documentation
 Requires:	gtk-doc-common
 Provides:	glibmm-doc
 Obsoletes:	glibmm-doc
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 Reference documentation for glibmm.
