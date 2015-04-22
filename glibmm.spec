@@ -5,7 +5,7 @@
 %bcond_without	static_libs	# don't build static library
 
 %define 	glib_ver 1:2.44.0
-%define		libsig_ver 1:2.2.10
+%define		libsigc_ver 1:2.2.10
 Summary:	A C++ interface for glib library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
@@ -19,16 +19,17 @@ URL:		http://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	glib2-devel >= %{glib_ver}
-BuildRequires:	libsigc++-devel >= %{libsig_ver}
+BuildRequires:	libsigc++-devel >= %{libsigc_ver}
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:2.0
 BuildRequires:	m4
 BuildRequires:	mm-common >= 0.9.7
+BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	glib2 >= %{glib_ver}
-Requires:	libsigc++ >= %{libsig_ver}
+Requires:	libsigc++ >= %{libsigc_ver}
 Obsoletes:	gtkmm-glib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -44,7 +45,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki glibmm
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= %{glib_ver}
-Requires:	libsigc++-devel >= %{libsig_ver}
+Requires:	libsigc++-devel >= %{libsigc_ver}
 Requires:	libstdc++-devel
 Obsoletes:	gtkmm-glib-devel
 
