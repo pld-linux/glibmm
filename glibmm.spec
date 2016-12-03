@@ -4,17 +4,17 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 
-%define 	glib_ver	1:2.48.0
-%define		libsigc_ver	1:2.8.0
+%define 	glib_ver	1:2.50.0
+%define		libsigc_ver	1:2.10.0
 Summary:	A C++ interface for glib library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
-Version:	2.48.1
+Version:	2.50.0
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.48/%{name}-%{version}.tar.xz
-# Source0-md5:	f08b2c7f09b984b0df05f0bf4d20ad11
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.50/%{name}-%{version}.tar.xz
+# Source0-md5:	e7416beff6cba1f38c2bccd0dc8c3278
 URL:		http://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
@@ -105,6 +105,7 @@ Przykłady dla glibmm.
 %{__autoconf}
 %{__automake}
 %configure \
+	--disable-silent-rules \
 	%{?with_static_libs:--enable-static}
 
 %{__make}
