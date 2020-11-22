@@ -9,15 +9,16 @@
 Summary:	A C++ interface for glib library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
-Version:	2.64.2
+Version:	2.64.4
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.64/%{name}-%{version}.tar.xz
-# Source0-md5:	c5f74897edfa7e1e771bc837dd586402
+Source0:	https://download.gnome.org/sources/glibmm/2.64/%{name}-%{version}.tar.xz
+# Source0-md5:	a5d54b861f68c5fb34249d906116449b
 URL:		https://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
+BuildRequires:	doxygen >= 1:1.8.9
 BuildRequires:	glib2-devel >= %{glib_ver}
 BuildRequires:	libsigc++-devel >= %{libsigc_ver}
 BuildRequires:	libstdc++-devel >= 6:4.7
@@ -26,6 +27,7 @@ BuildRequires:	m4
 BuildRequires:	mm-common >= 0.9.10
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	glib2 >= %{glib_ver}
@@ -75,9 +77,7 @@ Group:		Documentation
 Requires:	gtk-doc-common
 Provides:	glibmm-doc
 Obsoletes:	glibmm-doc
-%if "%{_rpmversion}" >= "4.6"
-BuildArch:	noarch
-%endif
+%{?noarchpackage}
 
 %description apidocs
 Reference documentation for glibmm.
@@ -100,11 +100,14 @@ Przykłady dla glibmm.
 %setup -q
 
 %build
+mm-common-prepare --copy --force
 %{__libtoolize}
 %{__aclocal} -I build
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
+	--enable-maintainer-mode \
 	--disable-silent-rules \
 	%{?with_static_libs:--enable-static}
 
