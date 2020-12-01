@@ -9,12 +9,12 @@
 Summary:	A C++ interface for glib library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
-Version:	2.64.4
+Version:	2.64.5
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	https://download.gnome.org/sources/glibmm/2.64/%{name}-%{version}.tar.xz
-# Source0-md5:	a5d54b861f68c5fb34249d906116449b
+# Source0-md5:	02c40e6bc0721c564e4b033a18cb3a8e
 URL:		https://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
