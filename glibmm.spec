@@ -77,7 +77,7 @@ Group:		Documentation
 Requires:	gtk-doc-common
 Provides:	glibmm-doc = %{version}-%{release}
 Obsoletes:	glibmm-doc < 2.12.8-2
-%{?noarchpackage}
+BuildArch:	noarch
 
 %description apidocs
 Reference documentation for glibmm.
