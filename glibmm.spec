@@ -9,12 +9,12 @@
 Summary:	A C++ interface for glib library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki glib
 Name:		glibmm
-Version:	2.66.2
+Version:	2.66.3
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	https://download.gnome.org/sources/glibmm/2.66/%{name}-%{version}.tar.xz
-# Source0-md5:	89c0ba07736d258b84bc201bd213fd69
+# Source0-md5:	01857d4ee0f6aa81ccc375202857b351
 URL:		https://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
@@ -33,7 +33,7 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	glib2 >= %{glib_ver}
 Requires:	libsigc++ >= %{libsigc_ver}
-Obsoletes:	gtkmm-glib
+Obsoletes:	gtkmm-glib < 2.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -50,7 +50,7 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= %{glib_ver}
 Requires:	libsigc++-devel >= %{libsigc_ver}
 Requires:	libstdc++-devel >= 6:4.7
-Obsoletes:	gtkmm-glib-devel
+Obsoletes:	gtkmm-glib-devel < 2.4
 
 %description devel
 Header files for glibmm library.
@@ -63,7 +63,7 @@ Summary:	Static glibmm library
 Summary(pl.UTF-8):	Statyczna biblioteka glibmm
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
-Obsoletes:	gtkmm-glib-static
+Obsoletes:	gtkmm-glib-static < 2.4
 
 %description static
 Static glibmm library.
