@@ -25,6 +25,7 @@ BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	libtool >= 2:2.0
 BuildRequires:	m4
 BuildRequires:	mm-common >= 0.9.10
+BuildRequires:	perl-XML-Parser
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.6
