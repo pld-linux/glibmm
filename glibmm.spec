@@ -18,9 +18,11 @@ BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	doxygen >= 1:1.8.9
 BuildRequires:	glib2-devel >= %{glib_ver}
+BuildRequires:	graphviz
 BuildRequires:	libsigc++-devel >= %{libsigc_ver}
 BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	libtool >= 2:2.0
+BuildRequires:	libxslt-progs
 BuildRequires:	m4
 BuildRequires:	mm-common >= 0.9.10
 BuildRequires:	perl-XML-Parser
