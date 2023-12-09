@@ -1,6 +1,7 @@
 #
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
+%bcond_without	apidocs		# documentation
 
 %define 	glib_ver	1:2.62.0
 %define		libsigc_ver	1:2.10.0
@@ -16,13 +17,13 @@ Source0:	https://download.gnome.org/sources/glibmm/2.66/%{name}-%{version}.tar.x
 URL:		https://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	doxygen >= 1:1.8.9
+%{?with_apidocs:BuildRequires:	doxygen >= 1:1.8.9}
 BuildRequires:	glib2-devel >= %{glib_ver}
-BuildRequires:	graphviz
+%{?with_apidocs:BuildRequires:	graphviz}
 BuildRequires:	libsigc++-devel >= %{libsigc_ver}
 BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	libtool >= 2:2.0
-BuildRequires:	libxslt-progs
+%{?with_apidocs:BuildRequires:	libxslt-progs}
 BuildRequires:	m4
 BuildRequires:	mm-common >= 0.9.10
 BuildRequires:	perl-XML-Parser
@@ -112,6 +113,7 @@ mm-common-prepare --copy --force
 %configure \
 	--enable-maintainer-mode \
 	--disable-silent-rules \
+	%{!?with_apidocs:--disable-documentation} \
 	%{?with_static_libs:--enable-static}
 
 %{__make}
@@ -173,9 +175,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libglibmm_generate_extra_defs-2.4.a
 %endif
 
+%if %{with apidocs}
 %files apidocs
 %defattr(644,root,root,755)
 %{_gtkdocdir}/glibmm-2.4
+%endif
 
 %files examples
 %defattr(644,root,root,755)
